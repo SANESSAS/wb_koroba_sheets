@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#6f24d9">
-  <meta name="description" content="Поддержка и справка по WB Koroba Sheets.">
+  <meta name="theme-color" content="#6d28d9">
+  <meta name="description" content="Поддержка и инструкция по WB Koroba Sheets.">
+  <meta name="author" content="SANESSAS">
   <title>Поддержка — WB Koroba Sheets</title>
+  <link rel="canonical" href="https://sanessas.github.io/wb_koroba_sheets/support.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="subpage">
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="WB Koroba Sheets — главная">
         <span class="brand-mark">WB</span>
-        <span class="brand-text">Koroba <b>Sheets</b></span>
+        <span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span>
       </a>
       <nav class="nav" aria-label="Навигация">
-        <a href="index.html#work">Как работает</a>
+        <a href="index.html#how">Как работает</a>
         <a href="privacy.html">Конфиденциальность</a>
-        <a class="nav-pill" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
+        <a class="nav-button" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </nav>
     </div>
   </header>
@@ -30,27 +32,33 @@
         <a class="back" href="index.html">← На главную</a>
         <span class="kicker">Справка</span>
         <h1>Поддержка <em>WB Koroba Sheets</em></h1>
-        <p class="lead">Краткая инструкция по подготовке таблицы, запуску дополнения и решению типовых ошибок.</p>
+        <p class="lead">Подготовка таблицы, запуск дополнения и решения типовых ошибок.</p>
       </div>
     </section>
 
     <div class="document">
       <section>
         <h2>Перед запуском</h2>
-        <p>Проверьте структуру таблицы:</p>
-        <ul>
-          <li>есть лист с названием «ID»;</li>
-          <li>ID находятся в колонке A этого листа;</li>
-          <li>есть лист «Готовые данные»;</li>
-          <li>названия коробов находятся в строке 4 и имеют вид «Короб 1», «Короб 2» и т.д.;</li>
-          <li>количество ID не превышает количество найденных коробов.</li>
-        </ul>
+        <p>Проверьте четыре основных пункта:</p>
+        <div class="checklist">
+          <div class="check-item"><span>✓</span><p>Есть лист <strong>«ID»</strong>, а значения находятся в колонке A.</p></div>
+          <div class="check-item"><span>✓</span><p>Есть лист <strong>«Готовые данные»</strong>.</p></div>
+          <div class="check-item"><span>✓</span><p>В строке 4 находятся заголовки вида <strong>«Короб 1»</strong>, <strong>«Короб 2»</strong> и т.д.</p></div>
+          <div class="check-item"><span>✓</span><p>Количество ID не превышает количество найденных колонок коробов.</p></div>
+        </div>
       </section>
 
       <section>
         <h2>Как запустить</h2>
+        <p>Команда находится в меню Google Таблиц:</p>
         <div class="info-box"><p><strong>Расширения → WB Koroba Sheets → Заполнить ID по коробам</strong></p></div>
         <p>После выполнения появится сообщение с количеством обработанных ID и найденных позиций коробов.</p>
+      </section>
+
+      <section>
+        <h2>Как определяется порядок</h2>
+        <p>Дополнение не сортирует короба по номеру. Первый ID записывается в первую подходящую колонку слева, второй — в следующую и так далее.</p>
+        <div class="info-box"><p>Например: <strong>Короб 8 | Короб 3 | Короб 15</strong> останутся именно в таком порядке.</p></div>
       </section>
 
       <section>
@@ -70,28 +78,28 @@
           </article>
           <article class="support-card">
             <h3>ID больше, чем коробов</h3>
-            <p>Нужно добавить недостающие колонки коробов или уменьшить список ID перед запуском.</p>
+            <p>Добавьте недостающие колонки коробов или уменьшите список ID перед запуском.</p>
           </article>
         </div>
       </section>
 
       <section>
-        <h2>Как определяется порядок</h2>
-        <p>Дополнение не сортирует короба по номеру. Первый ID записывается в первую подходящую колонку слева, второй — в следующую и так далее.</p>
-        <div class="info-box"><p>Например: <strong>Короб 8 | Короб 3 | Короб 15</strong> остаются именно в таком порядке.</p></div>
+        <h2>Что происходит с существующими значениями</h2>
+        <p>Для найденных коробов новые ID записываются в строку 2. Если там уже было значение, оно будет заменено.</p>
+        <p>Если новый список ID короче предыдущего, дополнение не очищает оставшиеся значения в более правых коробах автоматически. При необходимости их нужно удалить вручную.</p>
       </section>
 
       <section>
         <h2>Сообщить о проблеме</h2>
-        <p>Если ошибка повторяется при корректной структуре таблицы, можно создать Issue в репозитории проекта или написать через профиль GitHub.</p>
+        <p>Если ошибка повторяется при корректной структуре таблицы, можно открыть Issue в публичном репозитории проекта.</p>
         <div class="support-grid">
           <article class="support-card">
-            <h3>Репозиторий</h3>
-            <p><a href="https://github.com/SANESSAS/wb_koroba_sheets">github.com/SANESSAS/wb_koroba_sheets →</a></p>
+            <h3>Issues</h3>
+            <p><a href="https://github.com/SANESSAS/wb_koroba_sheets/issues">Создать или посмотреть Issue →</a></p>
           </article>
           <article class="support-card">
-            <h3>Профиль разработчика</h3>
-            <p><a href="https://github.com/SANESSAS">github.com/SANESSAS →</a></p>
+            <h3>Исходный код</h3>
+            <p><a href="https://github.com/SANESSAS/wb_koroba_sheets">Открыть репозиторий →</a></p>
           </article>
         </div>
       </section>
@@ -99,17 +107,18 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="index.html"><span class="brand-mark">WB</span><span class="brand-text">Koroba <b>Sheets</b></span></a>
-        <p>Инструмент для автоматизации заполнения ID по коробам в Google Таблицах.</p>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">WB</span><span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span></a>
+        <p>Автоматизация заполнения ID по коробам в Google Таблицах.</p>
       </div>
-      <div class="footer-nav">
+      <div class="footer-links">
         <a href="privacy.html">Конфиденциальность</a>
         <a href="terms.html">Условия использования</a>
         <a href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </div>
     </div>
+    <div class="container footer-bottom"><span>WB Koroba Sheets</span><span>Разработчик: SANESSAS</span></div>
   </footer>
 </body>
 </html>
