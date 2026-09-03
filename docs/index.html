@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WB Koroba Sheets — дополнение для Google Таблиц, которое автоматизирует заполнение ID по коробам.">
+  <title>WB Koroba Sheets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Google Sheets Add-on</p>
+      <h1>WB Koroba Sheets</h1>
+      <p class="lead">Дополнение для Google Таблиц, которое автоматизирует заполнение ID по коробам при работе с таблицами Wildberries.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
+        <a class="link" href="privacy.html">Политика конфиденциальности</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Что делает</h2>
+      <p>Я сделал этот инструмент, чтобы не переносить ID вручную по большому количеству колонок.</p>
+      <ul>
+        <li>берёт ID из колонки A листа <code>ID</code>;</li>
+        <li>находит на листе <code>Готовые данные</code> колонки вида <code>Короб N</code>;</li>
+        <li>сохраняет фактический порядок коробов слева направо;</li>
+        <li>записывает ID в строку 2 соответствующих колонок;</li>
+        <li>останавливает выполнение, если структура таблицы не соответствует ожидаемой.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Как используется</h2>
+      <p>После установки дополнения команда запускается прямо из меню Google Таблиц. Дополнительные программы и отдельный интерфейс не нужны.</p>
+      <div class="command">Расширения → WB Koroba Sheets → Заполнить ID по коробам</div>
+    </section>
+
+    <section>
+      <h2>Требования к таблице</h2>
+      <p>В книге должны быть листы <code>ID</code> и <code>Готовые данные</code>. ID находятся в колонке A, заголовки коробов — в строке 4, а результат записывается в строку 2.</p>
+    </section>
+
+    <section>
+      <h2>О проекте</h2>
+      <p>Проект работает на Google Apps Script и предназначен для Google Sheets. Обработка выполняется внутри открытой таблицы.</p>
+      <p class="note">WB Koroba Sheets — независимый проект и не является официальным продуктом Wildberries.</p>
+    </section>
+
+    <footer>
+      <span>WB Koroba Sheets</span>
+      <a href="privacy.html">Конфиденциальность</a>
+    </footer>
+  </main>
+</body>
+</html>
