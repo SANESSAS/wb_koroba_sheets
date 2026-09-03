@@ -3,179 +3,203 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#6d28d9">
-  <meta name="description" content="WB Koroba Sheets — дополнение для Google Таблиц, которое автоматически распределяет ID по колонкам коробов.">
+  <meta name="theme-color" content="#6f24d9">
+  <meta name="description" content="WB Koroba Sheets — дополнение для Google Таблиц, которое распределяет ID по колонкам коробов слева направо.">
+  <meta property="og:title" content="WB Koroba Sheets">
+  <meta property="og:description" content="Автоматическое заполнение ID по коробам в Google Таблицах.">
+  <meta property="og:type" content="website">
   <title>WB Koroba Sheets — заполнение ID по коробам</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="WB Koroba Sheets — главная">
         <span class="brand-mark">WB</span>
-        <span>Koroba Sheets</span>
+        <span class="brand-text">Koroba <b>Sheets</b></span>
       </a>
-      <nav class="nav" aria-label="Навигация">
-        <a href="#how">Как работает</a>
-        <a href="#requirements">Требования</a>
-        <a href="privacy.html">Конфиденциальность</a>
-        <a class="nav-github" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#work">Как работает</a>
+        <a href="#table">Структура</a>
+        <a href="support.html">Поддержка</a>
+        <a class="nav-pill" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <div class="status"><span class="status-dot"></span> Google Sheets Add-on</div>
-          <h1>ID по коробам — <span>без ручного переноса</span></h1>
-          <p class="hero-text">WB Koroba Sheets переносит ID из отдельного листа в нужные колонки коробов и сохраняет фактический порядок колонок слева направо.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="https://github.com/SANESSAS/wb_koroba_sheets">Открыть на GitHub</a>
-            <a class="button secondary" href="#how">Посмотреть принцип работы</a>
-          </div>
-          <div class="hero-points">
-            <span>Работает прямо в Google Таблицах</span>
-            <span>Без отдельной программы</span>
-            <span>Без собственного сервера</span>
-          </div>
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="badge"><span></span> Google Sheets Add-on</div>
+        <h1>Заполнение ID по коробам <em>в один запуск</em></h1>
+        <p class="hero-lead">Дополнение берет список ID с листа <code>ID</code>, находит колонки <code>Короб N</code> и переносит значения в фактическом порядке слева направо.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Как это работает</a>
+          <a class="btn btn-light" href="https://github.com/SANESSAS/wb_koroba_sheets">Исходный код</a>
         </div>
 
-        <div class="demo-card" aria-label="Пример работы дополнения">
-          <div class="demo-top">
-            <span class="demo-title">Готовые данные</span>
-            <span class="demo-badge">пример</span>
-          </div>
-          <div class="sheet-preview">
-            <div class="sheet-row sheet-head">
-              <span></span><span>Короб 8</span><span>Короб 3</span><span>Короб 15</span>
-            </div>
-            <div class="sheet-row">
-              <span class="row-name">ID</span><strong>12345</strong><strong>67890</strong><strong>54321</strong>
-            </div>
-          </div>
-          <div class="demo-flow">
-            <div><b>12345</b><small>первый ID</small></div>
-            <span>→</span>
-            <div><b>Короб 8</b><small>первая колонка слева</small></div>
-          </div>
-          <p class="demo-note">Номера коробов не сортируются. Используется реальный порядок колонок в таблице.</p>
+        <div class="facts" aria-label="Основные свойства">
+          <div><strong>1 команда</strong><span>для заполнения</span></div>
+          <div><strong>0 серверов</strong><span>вне Google</span></div>
+          <div><strong>Слева → направо</strong><span>без сортировки коробов</span></div>
         </div>
-      </section>
+      </div>
 
-      <section class="section intro-section">
-        <div class="section-heading">
-          <p class="eyebrow">Зачем это нужно</p>
-          <h2>Одна команда вместо ручного заполнения</h2>
-        </div>
-        <p class="section-lead">Инструмент сделан для таблиц, где список ID уже подготовлен, а дальше его нужно разнести по колонкам <code>Короб N</code>. Скрипт берет эту рутину на себя и перед записью проверяет структуру таблицы.</p>
-      </section>
+      <div class="hero-visual" aria-label="Пример работы">
+        <div class="app-window">
+          <div class="window-bar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>Готовые данные</span>
+            <span class="window-state">готово</span>
+          </div>
 
-      <section class="section" id="how">
-        <div class="section-heading">
-          <p class="eyebrow">Как работает</p>
-          <h2>Три шага</h2>
-        </div>
-        <div class="steps">
-          <article class="step-card">
-            <span class="step-number">01</span>
-            <h3>Читает ID</h3>
-            <p>Берет непустые значения сверху вниз из колонки <code>A</code> листа <code>ID</code>.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-number">02</span>
-            <h3>Находит короба</h3>
-            <p>Ищет в строке 4 листа <code>Готовые данные</code> заголовки формата <code>Короб N</code>.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-number">03</span>
-            <h3>Записывает результат</h3>
-            <p>Заполняет строку 2 слева направо и не перезаписывает остальные области листа.</p>
-          </article>
-        </div>
-      </section>
+          <div class="sheet">
+            <div class="sheet-corner"></div>
+            <div class="sheet-col">B</div><div class="sheet-col">C</div><div class="sheet-col">D</div>
+            <div class="sheet-rownum">4</div>
+            <div class="sheet-cell head">Короб 8</div><div class="sheet-cell head">Короб 3</div><div class="sheet-cell head">Короб 15</div>
+            <div class="sheet-rownum">2</div>
+            <div class="sheet-cell value">12345</div><div class="sheet-cell value">67890</div><div class="sheet-cell value">54321</div>
+          </div>
 
-      <section class="section command-section">
+          <div class="process-line">
+            <div class="process-item"><span>01</span><b>12345</b></div>
+            <div class="arrow">→</div>
+            <div class="process-item accent"><span>Короб</span><b>8</b></div>
+          </div>
+
+          <p class="visual-note">Номер короба не влияет на порядок. Первый ID записывается в первую найденную колонку слева.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container strip-inner">
+        <span>Google Apps Script</span>
+        <i></i>
+        <span>Google Таблицы</span>
+        <i></i>
+        <span>Открытый исходный код</span>
+        <i></i>
+        <span>Без внешней базы данных</span>
+      </div>
+    </section>
+
+    <section class="section container" id="work">
+      <div class="section-title">
+        <span class="kicker">Принцип работы</span>
+        <h2>Три простых действия</h2>
+        <p>Логика специально сделана предсказуемой: дополнение не перестраивает таблицу и работает только с нужными ячейками.</p>
+      </div>
+
+      <div class="step-grid">
+        <article class="card step">
+          <div class="step-top"><span class="step-no">01</span><span class="mini-tag">ID</span></div>
+          <h3>Читает список</h3>
+          <p>Берет непустые значения из колонки <code>A</code> листа <code>ID</code> сверху вниз.</p>
+        </article>
+
+        <article class="card step">
+          <div class="step-top"><span class="step-no">02</span><span class="mini-tag">Короба</span></div>
+          <h3>Находит колонки</h3>
+          <p>Проверяет строку 4 листа <code>Готовые данные</code> и находит заголовки формата <code>Короб N</code>.</p>
+        </article>
+
+        <article class="card step">
+          <div class="step-top"><span class="step-no">03</span><span class="mini-tag">Готово</span></div>
+          <h3>Записывает ID</h3>
+          <p>Заполняет строку 2 в физическом порядке колонок слева направо и показывает результат.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="table">
+      <div class="section-title split-title">
         <div>
-          <p class="eyebrow">Запуск</p>
-          <h2>Команда находится в меню Google Таблиц</h2>
+          <span class="kicker">Структура таблицы</span>
+          <h2>Что нужно подготовить</h2>
         </div>
-        <div class="command-box">
-          <span>Расширения</span><b>→</b><span>WB Koroba Sheets</span><b>→</b><span>Заполнить ID по коробам</span>
-        </div>
-      </section>
+        <p>Дополнение рассчитано на конкретную структуру, поэтому перед запуском легко проверить, что всё находится на своих местах.</p>
+      </div>
 
-      <section class="section" id="requirements">
-        <div class="section-heading">
-          <p class="eyebrow">Структура таблицы</p>
-          <h2>Что должно быть подготовлено</h2>
-        </div>
-        <div class="requirements-grid">
-          <article class="requirement-card">
-            <div class="requirement-icon">A</div>
-            <div>
-              <h3>Лист «ID»</h3>
-              <p>Список ID находится в колонке A. Пустые строки пропускаются.</p>
-            </div>
-          </article>
-          <article class="requirement-card">
-            <div class="requirement-icon">4</div>
-            <div>
-              <h3>Строка с коробами</h3>
-              <p>На листе «Готовые данные» заголовки коробов находятся в строке 4.</p>
-            </div>
-          </article>
-          <article class="requirement-card">
-            <div class="requirement-icon">2</div>
-            <div>
-              <h3>Строка результата</h3>
-              <p>ID записываются в строку 2 соответствующих колонок коробов.</p>
-            </div>
-          </article>
-          <article class="requirement-card">
-            <div class="requirement-icon">✓</div>
-            <div>
-              <h3>Встроенные проверки</h3>
-              <p>Если листы, короба или количество позиций не совпадают, выполнение останавливается с понятной ошибкой.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+      <div class="requirements">
+        <article class="req card">
+          <div class="req-icon">A</div>
+          <div><h3>Лист «ID»</h3><p>ID находятся в колонке A. Пустые ячейки пропускаются.</p></div>
+        </article>
+        <article class="req card">
+          <div class="req-icon">4</div>
+          <div><h3>Заголовки коробов</h3><p>На листе «Готовые данные» они находятся в строке 4.</p></div>
+        </article>
+        <article class="req card">
+          <div class="req-icon">2</div>
+          <div><h3>Строка результата</h3><p>ID записываются в строку 2 соответствующих колонок.</p></div>
+        </article>
+        <article class="req card">
+          <div class="req-icon">✓</div>
+          <div><h3>Проверки перед записью</h3><p>Если листы или короба не найдены, выполнение останавливается с понятным сообщением.</p></div>
+        </article>
+      </div>
+    </section>
 
-      <section class="section details-section">
-        <div class="details-card">
-          <p class="eyebrow">Технически</p>
-          <h2>Google Apps Script</h2>
-          <p>Дополнение работает внутри Google Sheets через Google Apps Script. Проект не использует собственный сервер или отдельную базу данных для содержимого таблиц.</p>
-          <a class="text-link" href="privacy.html">Подробнее о работе с данными →</a>
+    <section class="section container">
+      <div class="launch card">
+        <div>
+          <span class="kicker">Запуск</span>
+          <h2>Команда прямо в меню таблицы</h2>
+          <p>После установки дополнение запускается без отдельного сайта, приложения или программы.</p>
         </div>
-        <div class="details-card muted-card">
-          <p class="eyebrow">Статус</p>
-          <h2>Рабочая версия</h2>
-          <p>Основная логика уже используется в рабочих таблицах. Сейчас проект оформляется как дополнение для Google Таблиц.</p>
-          <a class="text-link" href="https://github.com/SANESSAS/wb_koroba_sheets">Исходный код на GitHub →</a>
+        <div class="menu-path" aria-label="Путь к команде">
+          <span>Расширения</span><b>›</b><span>WB Koroba Sheets</span><b>›</b><span>Заполнить ID по коробам</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section disclaimer">
-        <strong>Независимый проект.</strong>
-        <p>WB Koroba Sheets не является официальным продуктом Wildberries и не связан с компанией Wildberries.</p>
-      </section>
-    </main>
+    <section class="section container">
+      <div class="trust-grid">
+        <article class="trust card dark-card">
+          <span class="kicker light-kicker">Данные</span>
+          <h2>Без собственного сервера</h2>
+          <p>Содержимое таблиц не отправляется на отдельный сервер проекта и не сохраняется в собственной базе данных.</p>
+          <a href="privacy.html">Политика конфиденциальности <span>→</span></a>
+        </article>
 
-    <footer class="footer">
+        <article class="trust card">
+          <span class="kicker">Проект</span>
+          <h2>Код открыт</h2>
+          <p>Исходный код дополнения находится в публичном репозитории GitHub и доступен для просмотра.</p>
+          <a href="https://github.com/SANESSAS/wb_koroba_sheets">Открыть репозиторий <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="notice container">
+      <div class="notice-mark">i</div>
+      <p><strong>Независимый проект.</strong> WB Koroba Sheets не является официальным продуктом Wildberries и не связан с компанией Wildberries.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
       <div>
         <a class="brand footer-brand" href="index.html">
           <span class="brand-mark">WB</span>
-          <span>Koroba Sheets</span>
+          <span class="brand-text">Koroba <b>Sheets</b></span>
         </a>
         <p>Инструмент для автоматизации заполнения ID по коробам в Google Таблицах.</p>
       </div>
-      <div class="footer-links">
+      <div class="footer-nav">
+        <a href="support.html">Поддержка</a>
+        <a href="privacy.html">Конфиденциальность</a>
+        <a href="terms.html">Условия использования</a>
         <a href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
-        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>
