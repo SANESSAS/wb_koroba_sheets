@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#6f24d9">
+  <meta name="theme-color" content="#6d28d9">
   <meta name="description" content="Политика конфиденциальности WB Koroba Sheets.">
+  <meta name="author" content="SANESSAS">
   <title>Политика конфиденциальности — WB Koroba Sheets</title>
+  <link rel="canonical" href="https://sanessas.github.io/wb_koroba_sheets/privacy.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="subpage">
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="WB Koroba Sheets — главная">
         <span class="brand-mark">WB</span>
-        <span class="brand-text">Koroba <b>Sheets</b></span>
+        <span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span>
       </a>
       <nav class="nav" aria-label="Навигация">
-        <a href="index.html#work">Как работает</a>
+        <a href="index.html#how">Как работает</a>
         <a href="support.html">Поддержка</a>
-        <a class="nav-pill" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
+        <a class="nav-button" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </nav>
     </div>
   </header>
@@ -30,7 +32,7 @@
         <a class="back" href="index.html">← На главную</a>
         <span class="kicker">Документы проекта</span>
         <h1>Политика <em>конфиденциальности</em></h1>
-        <p class="lead">Здесь описано, какие данные нужны дополнению для работы и что с ними происходит.</p>
+        <p class="lead">Какие данные нужны WB Koroba Sheets для работы, для чего они используются и что с ними происходит.</p>
         <div class="meta-line"><span>WB Koroba Sheets</span><span>Последнее обновление: 3 сентября 2026 года</span></div>
       </div>
     </section>
@@ -38,68 +40,70 @@
     <div class="document">
       <section>
         <h2>1. Общие положения</h2>
-        <p>WB Koroba Sheets — дополнение для Google Таблиц, предназначенное для автоматизации заполнения ID по колонкам коробов. Дополнение обрабатывает только те данные открытой таблицы, которые необходимы для выполнения команды, запущенной пользователем.</p>
+        <p>WB Koroba Sheets — дополнение для Google Таблиц, предназначенное для автоматизации заполнения ID по колонкам коробов. Обработка данных начинается только после запуска команды пользователем и ограничена текущей открытой таблицей.</p>
       </section>
 
       <section>
         <h2>2. Какие данные обрабатываются</h2>
-        <p>При запуске дополнение может читать:</p>
+        <p>Для выполнения основной функции дополнение может читать:</p>
         <ul>
-          <li>названия листов открытой Google Таблицы;</li>
+          <li>названия листов текущей Google Таблицы;</li>
           <li>значения из колонки A листа «ID»;</li>
           <li>заголовки строки 4 листа «Готовые данные»;</li>
           <li>название текущей таблицы для отображения результата пользователю.</li>
         </ul>
-        <p>После проверки структуры дополнение записывает ID в соответствующие ячейки строки 2.</p>
+        <p>После проверки структуры дополнение записывает ID в строку 2 найденных колонок коробов.</p>
       </section>
 
       <section>
         <h2>3. Для чего используется доступ</h2>
-        <p>Доступ к Google Sheets используется исключительно для выполнения основной функции дополнения: чтения подготовленных ID, поиска колонок коробов и записи результата в текущую таблицу.</p>
-        <p>Дополнение не использует данные Google для рекламы, формирования пользовательских профилей или иных целей, не связанных с его основной функцией.</p>
+        <p>Доступ к Google Sheets используется только для основной функции проекта: чтения подготовленного списка ID, поиска колонок <code>Короб N</code>, записи результата и вывода сообщения о выполнении.</p>
+        <p>Данные Google не используются для рекламы, продажи данных, построения пользовательских профилей или иных целей, не связанных с работой дополнения.</p>
       </section>
 
       <section>
         <h2>4. Хранение и передача данных</h2>
-        <p>Проект не использует собственный сервер или отдельную базу данных для хранения содержимого Google Таблиц. Код дополнения не отправляет содержимое таблиц сторонним сервисам.</p>
-        <p>Выполнение происходит средствами Google Apps Script и Google Sheets в инфраструктуре Google.</p>
+        <p>WB Koroba Sheets не использует собственный сервер или отдельную базу данных для хранения содержимого Google Таблиц.</p>
+        <p>Код проекта не отправляет содержимое таблиц сторонним сервисам. Выполнение происходит средствами Google Apps Script и Google Sheets в инфраструктуре Google.</p>
       </section>
 
       <section>
-        <h2>5. Ограниченное использование данных Google</h2>
-        <p>Использование информации, полученной через Google APIs, ограничено функциональностью дополнения и соответствует требованиям Google API Services User Data Policy, включая требования Limited Use.</p>
+        <h2>5. Данные сайта</h2>
+        <p>Сайт проекта размещен на GitHub Pages. В код сайта не добавлены собственные системы аналитики, рекламные модули, формы сбора данных или пиксели отслеживания.</p>
+        <p>При посещении сайта применяются стандартные технические правила и журналы инфраструктуры GitHub Pages, которые находятся под управлением GitHub.</p>
       </section>
 
       <section>
-        <h2>6. Сайт проекта</h2>
-        <p>Сайт WB Koroba Sheets размещён на GitHub Pages. На сайте не установлены собственные системы аналитики, рекламные модули, пиксели отслеживания или формы сбора персональных данных.</p>
+        <h2>6. Google API Services User Data Policy</h2>
+        <p>Использование информации, полученной через Google APIs, ограничено функциональностью дополнения и должно соответствовать Google API Services User Data Policy, включая требования Limited Use.</p>
       </section>
 
       <section>
         <h2>7. Изменения политики</h2>
-        <p>Если изменится функциональность дополнения, запрашиваемые разрешения или порядок обработки данных, эта страница будет обновлена.</p>
+        <p>Если изменится функциональность дополнения, набор запрашиваемых разрешений или порядок обработки данных, эта страница будет обновлена. Дата актуальной редакции указана в верхней части страницы.</p>
       </section>
 
       <section>
         <h2>8. Контакты</h2>
-        <p>По вопросам, связанным с проектом, доступом к данным или работой дополнения, можно обратиться через GitHub.</p>
-        <div class="info-box"><p><a href="https://github.com/SANESSAS">github.com/SANESSAS</a></p></div>
+        <p>Вопросы по конфиденциальности, доступу к данным и работе проекта можно направить через GitHub.</p>
+        <div class="info-box"><p><a href="https://github.com/SANESSAS">Профиль разработчика на GitHub →</a></p></div>
       </section>
     </div>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="index.html"><span class="brand-mark">WB</span><span class="brand-text">Koroba <b>Sheets</b></span></a>
-        <p>Инструмент для автоматизации заполнения ID по коробам в Google Таблицах.</p>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">WB</span><span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span></a>
+        <p>Автоматизация заполнения ID по коробам в Google Таблицах.</p>
       </div>
-      <div class="footer-nav">
+      <div class="footer-links">
         <a href="support.html">Поддержка</a>
         <a href="terms.html">Условия использования</a>
         <a href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </div>
     </div>
+    <div class="container footer-bottom"><span>WB Koroba Sheets</span><span>Разработчик: SANESSAS</span></div>
   </footer>
 </body>
 </html>
