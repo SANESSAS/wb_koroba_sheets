@@ -11,33 +11,26 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="subpage">
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="WB Koroba Sheets — главная">
-        <span class="brand-mark">WB</span>
-        <span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span>
-      </a>
-      <nav class="nav" aria-label="Навигация">
+      <a class="brand" href="index.html">WB Koroba Sheets</a>
+      <nav class="site-nav" aria-label="Основная навигация">
         <a href="index.html#how">Как работает</a>
         <a href="support.html">Поддержка</a>
-        <a class="nav-button" href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
+        <a href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
       </nav>
     </div>
   </header>
 
-  <main class="subpage-main">
-    <section class="subpage-hero">
-      <div class="container">
-        <a class="back" href="index.html">← На главную</a>
-        <span class="kicker">Документы проекта</span>
-        <h1>Политика <em>конфиденциальности</em></h1>
-        <p class="lead">Какие данные нужны WB Koroba Sheets для работы, для чего они используются и что с ними происходит.</p>
-        <div class="meta-line"><span>WB Koroba Sheets</span><span>Последнее обновление: 3 сентября 2026 года</span></div>
-      </div>
-    </section>
+  <main id="main">
+    <div class="container document">
+      <a class="back" href="index.html">← На главную</a>
+      <h1>Политика конфиденциальности</h1>
+      <p class="doc-meta">Последнее обновление: 3 сентября 2026 года</p>
 
-    <div class="document">
       <section>
         <h2>1. Общие положения</h2>
         <p>WB Koroba Sheets — дополнение для Google Таблиц, предназначенное для автоматизации заполнения ID по колонкам коробов. Обработка данных начинается только после запуска команды пользователем и ограничена текущей открытой таблицей.</p>
@@ -46,7 +39,7 @@
       <section>
         <h2>2. Какие данные обрабатываются</h2>
         <p>Для выполнения основной функции дополнение может читать:</p>
-        <ul>
+        <ul class="plain-list">
           <li>названия листов текущей Google Таблицы;</li>
           <li>значения из колонки A листа «ID»;</li>
           <li>заголовки строки 4 листа «Готовые данные»;</li>
@@ -85,25 +78,21 @@
 
       <section>
         <h2>8. Контакты</h2>
-        <p>Вопросы по конфиденциальности, доступу к данным и работе проекта можно направить через GitHub.</p>
-        <div class="info-box"><p><a href="https://github.com/SANESSAS">Профиль разработчика на GitHub →</a></p></div>
+        <p>Вопросы по конфиденциальности, доступу к данным и работе проекта можно направить через <a href="https://github.com/SANESSAS">профиль разработчика на GitHub</a>.</p>
       </section>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="index.html"><span class="brand-mark">WB</span><span class="brand-copy"><strong>Koroba Sheets</strong><small>Google Таблицы</small></span></a>
-        <p>Автоматизация заполнения ID по коробам в Google Таблицах.</p>
-      </div>
-      <div class="footer-links">
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-links">
+        <a href="index.html">Главная</a>
         <a href="support.html">Поддержка</a>
         <a href="terms.html">Условия использования</a>
         <a href="https://github.com/SANESSAS/wb_koroba_sheets">GitHub</a>
-      </div>
+      </p>
+      <p class="footer-note">WB Koroba Sheets · Разработчик: SANESSAS</p>
     </div>
-    <div class="container footer-bottom"><span>WB Koroba Sheets</span><span>Разработчик: SANESSAS</span></div>
   </footer>
 </body>
 </html>
